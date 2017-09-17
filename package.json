@@ -1,0 +1,22 @@
+{
+  "name": "Node.js-Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp server"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "bootstrap": "^3.3.7",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.5",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongodb": "^2.2.31",
+    "pug": "^2.0.0-rc.4"
+  }
+}
