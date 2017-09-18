@@ -3,4 +3,5 @@ block body
     ul
         each post in context
             li
-                =post.text
+                a(href="/posts/" + post._id)
+                    =post.title

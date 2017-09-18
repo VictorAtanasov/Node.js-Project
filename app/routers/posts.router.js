@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const ObjectId = require('mongodb').ObjectID;
 
 const attachTo = (app, data) => {
 
@@ -15,6 +16,20 @@ const attachTo = (app, data) => {
     })
     .get('/form', (req, res) => {
         return res.render('posts/form');
+    })
+    .get('/categories', (req, res) => {
+        
+    })
+    .get('/:id', (req, res) => {
+        const id = req.params.id;
+        return data.posts.filterBy({
+            '_id': ObjectId(id)
+        })
+            .then((post) => {
+                return res.render('posts/detail', {
+                    context: post
+                })
+            })
     })
     .post('/', (req, res) => {
         const post = req.body;

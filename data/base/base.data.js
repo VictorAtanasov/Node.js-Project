@@ -9,7 +9,7 @@ class BaseData {
 
     filterBy(props){
         return this.collection.find(props)
-            .toArray();        
+            .toArray();
     }
 
     getAll(){

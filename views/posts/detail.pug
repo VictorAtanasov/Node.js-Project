@@ -1,0 +1,7 @@
+extends ../_shared/_master
+block body
+    each post in context
+        h1
+            =post.title
+        p
+            =post.text
