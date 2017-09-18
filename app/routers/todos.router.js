@@ -22,8 +22,6 @@ const attachTo = (app, data) => {
         })
         .post('/', (req, res) => { 
             const todo = req.body;
-
-
             //validate todo
             let dbTodo = null;
             return data.todos.create(todo)

@@ -20,7 +20,7 @@ const attachTo = (app, data) => {
         //validate item
         return data.items.create(item)
             .then((dbItem) => {
-                return res.redirect('/items/' + dbItem.id);
+                return res.redirect('/items/' + dbItem.ops[0]._id);
             })
             .catch((err) => {
                 req.flash('error', err);
