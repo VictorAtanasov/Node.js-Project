@@ -23,4 +23,10 @@ mixin nav()
                 | Add post
         li
             a(href="/posts/categories")
-                | All Post Categories                  
+                | All Post Categories
+        if user
+            p
+                =user.username  
+            form(action="/auth/sign-out" method="post")
+                button.nav-btn
+                    | sign-out                

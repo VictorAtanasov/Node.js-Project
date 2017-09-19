@@ -4,6 +4,7 @@ const path = require('path');
 
 const attachTo = (app, data) => {
 
+
     app.get('/', (req, res) => {
         return res.render('home');
     });
@@ -14,6 +15,10 @@ const attachTo = (app, data) => {
             const modulePath = path.join(__dirname, file);
             require(modulePath).attachTo(app, data);
         });
+
+    app.get('*', (req, res) => {
+        return res.send('<h1>Not found</h1>', 404)
+    })
 }
 
 module.exports = { attachTo };

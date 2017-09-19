@@ -1,3 +1,5 @@
+const { ObjectID } = require('mongodb');
+
 class BaseData {
     constructor(db, ModelClass, validator){
         this.db = db;
@@ -28,6 +30,12 @@ class BaseData {
         return this.collection.updateOne({
             _id: model._id,
         }, model);
+    }
+
+    findById(id) {
+        return this.collection.findOne({
+            _id: new ObjectID(id),
+        });
     }
 
     _isModelValid(model){

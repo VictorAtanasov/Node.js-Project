@@ -1,26 +1,22 @@
-const BaseData = require('./base/base.data');
-const User = require('../models/user.model');
-
-class UsersData extends BaseData{
-    constructor (db) {
-        super(db, User)
+class User {
+    static isValid(model) {
+        return true;
     }
 
-    checkPassword(username, password) {
-        return this.collection.findOne({
-            username,
-        })
-            .then((user) => {
-                if(!user){
-                    throw new Error('Invalid user');
-                }
-                if(user.password !== password){
-                    throw new Error('Ivalid Password');
-                }
+    get id() {
+        return this._id;
+    }
 
-                return true;
-            })
+    static toViewModel(model) {
+        const viewModel = new User();
+
+        Object.keys(model)
+            .forEach((prop) => {
+                viewModel[prop] = model[prop];
+            });
+
+        return viewModel;
     }
 }
 
-module.exports = UsersData;
+module.exports = User;
