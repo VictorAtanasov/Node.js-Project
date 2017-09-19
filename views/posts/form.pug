@@ -1,13 +1,17 @@
 extends ../_shared/_master
+
+block head
+    script(src="/libs/bootstrap-3-typeahead/bootstrap3-typeahead.min.js")
+    script(src="/static/js/posts.js")
+    
 block body
-    //- != messages()
 
     form(action="/posts", method="POST")
         input(type="text" name="title" required placeholder="Enter title")
         br
         input(type="text" name="text" required placeholder="Enter text")
         br
-        input(type="text" name="category" required placeholder="Enter category")
+        input#autocomplete(type="text" name="category" required placeholder="Enter category")
         br
         button
             | Save

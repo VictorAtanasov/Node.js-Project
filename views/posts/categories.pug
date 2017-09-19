@@ -1,0 +1,7 @@
+extends ../_shared/_master
+block body
+    ul
+        each category in context
+            li
+                a(href="categories/" + category.name)
+                    =category.name
