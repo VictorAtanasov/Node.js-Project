@@ -29,4 +29,7 @@ mixin nav()
                 =user.username  
             form(action="/auth/sign-out" method="post")
                 button.nav-btn
-                    | sign-out                
+                    | sign-out
+        else
+            button.nav-btn
+                a(href="/auth/sign-in") Sign In               

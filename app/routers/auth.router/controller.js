@@ -19,17 +19,18 @@ class TodosController {
 
         this.data.users.findByUsername(bodyUser.username)
             .then((dbUser) => {
-                if (dbUser) {
-                    throw new Error('User already exists');
+                if (dbUser === undefined) {
+                    return this.data.users.create(bodyUser);
+                } else {
+                    throw 'The username is already teaken'
                 }
-
-                return this.data.users.create(bodyUser);
             })
             .then((dbUser) => {
                 return res.redirect('/auth/sign-in');
             })
             .catch((err) => {
                 req.flash('error', err);
+                return res.redirect('/auth/sign-up');
             });
     }
 }

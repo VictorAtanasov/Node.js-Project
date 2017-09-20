@@ -5,13 +5,16 @@ block head
     script(src="/static/js/posts.js")
     
 block body
-
-    form(action="/posts", method="POST")
-        input(type="text" name="title" required placeholder="Enter title")
-        br
-        input(type="text" name="text" required placeholder="Enter text")
-        br
-        input#autocomplete(type="text" name="category" required placeholder="Enter category")
-        br
-        button
-            | Save
+    if user
+        form(action="/posts", method="POST")
+            input(type="text" name="title" required placeholder="Enter title")
+            br
+            input(type="text" name="text" required placeholder="Enter text")
+            br
+            input#autocomplete(type="text" name="category" required placeholder="Enter category")
+            br
+            button
+                | Save
+    else
+        p
+            | Only registered users can add new posts
