@@ -3,18 +3,6 @@ mixin nav()
         li
             a(href="/")
                 | Home
-        //- li
-        //-     a(href="/items")
-        //-         | All items
-        //- li
-        //-     a(href="/items/form")
-        //-         | Add item
-        //- li
-        //-     a(href="/Todos")
-        //-         | All todos
-        //- li
-        //-     a(href="/todos/form")
-        //-         | Add todo
         li
             a(href="/posts")
                 | All posts
@@ -30,6 +18,9 @@ mixin nav()
             form(action="/auth/sign-out" method="post")
                 button.nav-btn
                     | sign-out
+            if user.uuid
+                img(src="/static/uploads/" + user.uuid + "/file/" + user.filename, alt="").img-thumbnail
+            
         else
             button.nav-btn
                 a(href="/auth/sign-in") Sign In               

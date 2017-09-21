@@ -7,4 +7,9 @@ block body
             =post.text
         p
             =post.category
+        p
+            =post.date
+        p
+            | posted by: 
+            =post.user
         img(src="/static/uploads/" + post.uuid + "/file/" + post.filename, alt="")

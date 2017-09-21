@@ -1,8 +1,10 @@
 extends ../_shared/_master
 block body
     != messages()
-    form(action='/auth/sign-up', method="POST")
-        input.form-control(type="text" name="username" placeholder="Enter username")
-        input.form-control(type="password" name="password" placeholder="Enter password")
+    form(action='/auth/sign-up', method="POST", enctype="multipart/form-data")
+        input.form-control(type="text" name="username" placeholder="Enter username" required)
+        input.form-control(type="password" name="password" placeholder="Enter password" required)
+        input.form-control(type="text" name="bio" placeholder="Enter bio" required)
+        input(type="file" name="file" required)
         button.btn.btn-success
             | Sign Up

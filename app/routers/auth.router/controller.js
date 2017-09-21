@@ -16,7 +16,10 @@ class TodosController {
 
     signUp(req, res) {
         const bodyUser = req.body;
-
+        if (req.files.file !== undefined){
+            bodyUser.filename = req.files.file.filename;
+            bodyUser.uuid = req.files.file.uuid;
+        }
         this.data.users.findByUsername(bodyUser.username)
             .then((dbUser) => {
                 if (dbUser === undefined) {

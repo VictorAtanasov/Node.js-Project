@@ -51,8 +51,13 @@ const attachTo = (app, data) => {
     })
     .post('/', (req, res) => {
         const post = req.body;
-        post.filename = req.files.file.filename;
-        post.uuid = req.files.file.uuid;
+        let date = data.posts.getDate();
+        if (req.files.file !== undefined){
+            post.filename = req.files.file.filename;
+            post.uuid = req.files.file.uuid;
+        }
+        post.date = date;
+        post.user = req.user.username;
         let dbPost = null;
         return data.posts.create(post)
             .then((_dbPost) => {
