@@ -6,13 +6,14 @@ block head
     
 block body
     if user
-        form(action="/posts", method="POST")
+        form(action="/posts", method="POST", enctype="multipart/form-data" )
             input(type="text" name="title" required placeholder="Enter title")
             br
             input(type="text" name="text" required placeholder="Enter text")
             br
             input#autocomplete(type="text" name="category" required placeholder="Enter category")
             br
+            input(type="file" name="file")
             button
                 | Save
     else

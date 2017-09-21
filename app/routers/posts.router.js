@@ -31,7 +31,7 @@ const attachTo = (app, data) => {
             'name': catName
         })
             .then((catPost) => {
-                catPost.forEach(function(posts) {
+                catPost.forEach((posts) => {
                     return res.render('posts/category', {
                         context: posts.posts
                     })
@@ -51,6 +51,8 @@ const attachTo = (app, data) => {
     })
     .post('/', (req, res) => {
         const post = req.body;
+        post.filename = req.files.file.filename;
+        post.uuid = req.files.file.uuid;
         let dbPost = null;
         return data.posts.create(post)
             .then((_dbPost) => {
