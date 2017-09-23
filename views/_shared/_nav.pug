@@ -1,25 +1,33 @@
 mixin nav()
-    ul
-        li
-            a(href="/")
-                | Home
-        li
-            a(href="/posts")
-                | All posts
-        li
-            a(href="/posts/form")
-                | Add post
-        li
-            a(href="/posts/categories")
-                | All Post Categories
-        if user
-            p
-                =user.username  
-            form(action="/auth/sign-out" method="post")
-                button.nav-btn
-                    | sign-out
+    div.navigation
+        ul
+            li
+                a(href="/")
+                    | Home
+            li
+                a(href="/posts")
+                    | All posts
+            li
+                a(href="/posts/form")
+                    | Add post
+            li
+                a(href="/posts/categories")
+                    | All Post Categories
+        if user  
             if user.uuid
-                img(src="/static/uploads/" + user.uuid + "/file/" + user.filename, alt="").img-thumbnail
+                span.avatar
+                    img(src="/static/uploads/" + user.uuid + "/file/" + user.filename, alt="")
+            else
+                span.avatar
+                    <i class="fa fa-user" aria-hidden="true"></i>
+            span.user-name
+                =user.username
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                ul.user-drop-down.hide
+                    li
+                        form(action="/auth/sign-out" method="post")
+                            button.nav-btn
+                                | sign-out
             
         else
             button.nav-btn
