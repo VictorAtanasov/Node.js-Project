@@ -1,3 +1,18 @@
+.left .btn {
+  border: 1px solid #e4e4e4;
+  padding: 5px 30px;
+  margin-top: 20px; }
+  .left .btn:hover {
+    background: #e4e4e4; }
+    .left .btn:hover a {
+      color: #ffffff; }
+  .left .btn a {
+    text-decoration: none;
+    color: #555555;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 3px; }
+
 .navigation {
   width: 100%;
   text-align: center;
@@ -60,15 +75,114 @@
 .logo-wraper {
   height: 250px;
   background: #f2f2f2;
-  filter: greyscale(20%); }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .logo-wraper img {
+    margin-top: 15px; }
 
 .paralax {
-  height: 400px;
+  height: 500px;
   overflow: hidden;
   background-image: url(./images/2.jpg);
-  background-size: auto;
+  background-size: cover;
   background-attachment: fixed;
-  background-position: center top; }
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.articles {
+  margin: 0 auto;
+  margin-top: -100px;
+  width: 75%;
+  background: #ffffff;
+  height: auto;
+  overflow: auto; }
+
+.left {
+  text-align: center;
+  width: 70%;
+  float: left;
+  padding: 0 80px; }
+
+.right {
+  width: 25%;
+  float: right;
+  text-align: center; }
+
+.article {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 30px 0 0 0; }
+  .article h2 {
+    font-size: 28px; }
+  .article img {
+    max-width: 100%; }
+
+.post-category {
+  color: #b5b5b5;
+  text-transform: uppercase;
+  font-size: 12px; }
+
+.post-title a {
+  color: #000000;
+  font-style: italic;
+  text-decoration: none; }
+
+.post-title:hover {
+  text-decoration: underline; }
+
+.post-author {
+  color: #676767;
+  font-size: 13px;
+  margin-bottom: 20px; }
+
+.italic {
+  font-style: italic; }
+
+.post-text {
+  text-align: left;
+  margin-top: 20px; }
+
+.border {
+  border-top: 1px solid #e4e4e4;
+  width: 100%;
+  margin-top: 20px; }
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 30px; }
+
+.circle {
+  margin-left: 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30px;
+  padding: 3px; }
+  .circle:hover {
+    background: #555555;
+    border: 1px solid #555555; }
+    .circle:hover i {
+      color: #ffffff; }
+  .circle i {
+    font-size: 17px; }
+
+.footer {
+  width: 100%;
+  margin-top: 20px;
+  background: #1a1c27;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-top: 1px solid #53545c;
+  font-size: 13px; }
+  .footer p {
+    margin-left: 15px;
+    color: #a1b1bc; }
+
+.footer-name {
+  color: #ffffff; }
 
 body {
   color: #555555;

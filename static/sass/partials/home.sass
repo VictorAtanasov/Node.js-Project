@@ -1,14 +1,99 @@
 .logo-wraper
     height: 250px
     background: #f2f2f2
-    filter: greyscale(20%)
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+        margin-top: 15px
 
 .paralax
-    height: 400px
+    height: 500px
     overflow: hidden
-
     background:
         image: url(./images/2.jpg)
-        size: auto
+        size: cover
         attachment: fixed
-        position: center top
+        position: center
+        repeat: no-repeat
+
+.articles
+    margin: 0 auto
+    margin-top: -100px
+    width: 75%
+    background: $white
+    height: auto
+    overflow: auto
+
+.left
+    text-align: center
+    width: 70%
+    float: left
+    padding: 0 80px
+    .btn
+        @extend %btn
+
+
+.right
+    width: 25%
+    float: right
+    text-align: center
+
+.article
+    border-bottom: 1px solid $border-color
+    padding: 30px 0 0 0
+    h2
+        font-size: 28px
+    img
+        max-width: 100%
+
+.post-category
+    color: #b5b5b5
+    text-transform: uppercase
+    font-size: 12px
+
+.post-title
+    a
+        color: $black
+        font-style: italic
+        text-decoration: none
+    &:hover
+        text-decoration: underline
+
+.post-author
+    color: #676767
+    font-size: 13px
+    margin-bottom: 20px
+
+.italic
+    font-style: italic
+
+.post-text
+    text-align: left
+    margin-top: 20px
+
+.border
+    border-top: 1px solid $border-color
+    width: 100%
+    margin-top: 20px
+
+.social
+    display: flex
+    align-items: center
+    justify-content: flex-end 
+    padding: 30px
+
+.circle
+    margin-left: 20px
+    border: 1px solid $border-color
+    border-radius: 50%
+    overflow: hidden
+    width: 30px
+    padding: 3px
+    &:hover
+        background: $primary-color
+        border: 1px solid $primary-color
+        i
+            color: $white
+    i
+        font-size: 17px

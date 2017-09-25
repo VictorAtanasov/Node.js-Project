@@ -6,7 +6,12 @@ const attachTo = (app, data) => {
 
 
     app.get('/', (req, res) => {
-        return res.render('home');
+        return data.posts.getAll()
+            .then((posts) => {
+                return res.render('home', {
+                    context: posts
+                });
+            });
     });
 
     fs.readdirSync(__dirname)

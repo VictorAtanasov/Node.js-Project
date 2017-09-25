@@ -2,5 +2,43 @@ extends _shared/_master
 block body
     div.body-wraper
         div.logo-wraper
+            img(src="../static/css/images/logo.png", alt="")
         div.paralax
-            
+        div.articles
+            div.left
+                each post in context
+                    div.article
+                        span.post-category
+                            =post.category
+                        h2.post-title
+                            a(href="/posts/" + post._id)
+                                =post.title
+                        div.post-author
+                            span.italic
+                                | by&nbsp
+                            span
+                                =post.user
+                            span.italic
+                                | &nbspon&nbsp
+                            span
+                                =post.date
+                        img(src="/static/uploads/" + post.uuid + "/file/" + post.filename, alt="")
+                        div.post-text
+                            p
+                                =post.text
+                        div.btn
+                            a(href="/posts/" + post._id)
+                                | Continue reading
+                        div.border
+                        div.social
+                            span.circle
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+
+
+            div.right
+                //- h2
+                //-     | RIGHT
