@@ -1,33 +1,37 @@
 extends ../_shared/_master
 block body
-    each post in context
-        div.body-wraper
-            div.logo-wraper
-                img(src="../static/css/images/logo.png", alt="")
-            div.post-image
-                img(src="/static/uploads/" + post.uuid + "/file/" + post.filename, alt="")
-            div.post-wraper
-                div.left
-                    div.title-wraper
-                        h2
-                            =post.title
-                        div.post-border
-                    div.post
-                        p
-                            =post.text
-                    div.border
-                        div.post-social
-                            span
-                                span.post-category-name
-                                    =post.category
-                            span.icons
-                                span.circle
-                                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                                span.circle
-                                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                                span.circle
-                                    <i class="fa fa-twitter" aria-hidden="true"></i>
-
+    //each post in context
+    div.body-wraper
+        div.logo-wraper
+            img(src="../static/css/images/logo.png", alt="")
+        div.post-image
+            img(src="/static/uploads/" + context.details[0].uuid + "/file/" + context.details[0].filename, alt="")
+        div.post-wraper
+            div.left
+                div.title-wraper
+                    h2
+                        =context.details[0].title
+                    div.post-border
+                div.post
+                    p
+                        =context.details[0].text
+                div.border
+                    div.post-social
+                        span
+                            span.post-category-name
+                                =context.details[0].category
+                        span.icons
+                            span.circle
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+            div.right
+                p
+                    = context.author.username
+                p
+                    = context.author.bio
 
 
     //- each post in context

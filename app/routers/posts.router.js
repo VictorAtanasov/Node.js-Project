@@ -40,14 +40,23 @@ const attachTo = (app, data) => {
     })
     .get('/:id', (req, res) => {
         const id = req.params.id;
-        return data.posts.filterBy({
+        return data.posts.filterBy({ 
             '_id': ObjectId(id)
         })
-            .then((post) => {
-                return res.render('posts/detail', {
-                    context: post
-                })
+        .then((post) => {
+            return data.users.findByUsername(post[0].user)
+            .then((user) => {
+                return {
+                    author: user,
+                    details: post
+                }
             })
+        })
+        .then((post) => {
+            return res.render('posts/detail', {
+                context: post
+            })
+        })
     })
     .post('/', (req, res) => {
         const post = req.body;
