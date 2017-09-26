@@ -1,0 +1,87 @@
+.page-bg
+    width: 100%
+    height: auto
+    min-height: 100%
+    min-width: 100%
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    background: 
+        image: url(./images/log-bg.jpg)
+        repeat: no-repeat
+        size: cover
+        position: center
+    #messages
+        position: absolute
+        top: 30%
+        left: 40%
+        text-transform: uppercase
+        font-weight: bold
+        color: #BA1010
+        li
+            list-style-type: none
+
+.logo
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0.2
+
+.form-wraper
+    background: rgba(255, 255, 255, 0.1)
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    width: 400px
+    height: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 20px 0 20px 20px
+    p
+        color: $white
+
+.form
+    width: 400px
+    input
+        border: 1px solid rgba(255, 255, 255, 0.4)
+        background: transparent
+        height: 40px
+        width: 80%
+        position: relative
+        padding-left: 10px
+        padding-right: 5px
+        &:focus
+            outline: 0
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6)
+        
+
+.input-wrapper
+    position: relative
+    margin-bottom: 15px
+    input
+        color: #fff !important
+    input::-webkit-input-placeholder
+        color: #979797
+
+.btn
+    background: rgba(255, 255, 255, 0.6)
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    color: rgba(255, 255, 255, 0.8)
+    &:hover
+        color: $white
+        background: transparent
+
+.btn-file
+    background: rgba(255, 255, 255, 0.3)
+
+.hide
+    display: none
+
+.button
+    @extend %btn
+    width: 40%
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    a
+        color: rgba(255, 255, 255, 0.4)
+    &:hover
+        background: transparent

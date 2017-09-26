@@ -1,8 +1,21 @@
-extends ../_shared/_master
+extends ../_shared/_form-master
 block body
-    != messages()
-    form(action='/auth/sign-in', method="POST")
-        input.form-control(type="text" name="username" placeholder="Enter username")
-        input.form-control(type="password" name="password" placeholder="Enter password")
-        button.btn.btn-success
-            | Sign In
+    div.page-bg
+        div.logo
+            img(src="../static/css/images/logo.png", alt="logo")
+        div.form-wraper
+            != messages()
+            div.form
+                if user
+                    p
+                        | You are already signed in!
+                    div.button
+                        a(href="/") Home Page
+                else
+                    form(action='/auth/sign-in', method="POST")
+                        div.input-wrapper
+                            input(type="text" name="username" placeholder="Username" required)
+                        div.input-wrapper
+                            input(type="password" name="password" placeholder="Password" required)
+                        button.btn
+                            | Sign In
