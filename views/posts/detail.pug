@@ -27,23 +27,31 @@ block body
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                             span.circle
                                 <i class="fa fa-twitter" aria-hidden="true"></i>
-            div.right
-                p
-                    = context.author.username
-                p
-                    = context.author.bio
-
-
-    //- each post in context
-    //-     h1
-    //-         =post.title
-    //-     p
-    //-         =post.text
-    //-     p
-    //-         =post.category
-    //-     p
-    //-         =post.date
-    //-     p
-    //-         | posted by: 
-    //-         =post.user
-    //-     img(src="/static/uploads/" + post.uuid + "/file/" + post.filename, alt="")
+                div.author-wraper
+                    div.author-image
+                        img(src="/static/uploads/" + context.author.uuid + "/file/" + context.author.filename, alt="")
+                    div.author
+                        h4
+                            =context.author.username
+                        p
+                            =context.author.bio
+                div.author-social-wraper
+                    div.author-social
+                        span.circle
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        span.circle
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        span.circle
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        span.circle
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        span.circle
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                div.comments
+                    form(action="/posts/comment", method="POST")
+                        input(type="text" name="title" required placeholder="Enter title")
+                        br
+                        input(type="text" name="text" required placeholder="Enter text")
+                        br
+                        button
+                            | Save

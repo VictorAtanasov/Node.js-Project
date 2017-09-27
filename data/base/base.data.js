@@ -32,6 +32,16 @@ class BaseData {
         }, model);
     }
 
+    insertComment(id, comment){
+        return this.collection.updateOne({
+            _id: new ObjectID(id),
+        }, {
+            $set: comment
+        }, {
+            upsert: true
+        })
+    }
+
     findById(id) {
         return this.collection.findOne({
             _id: new ObjectID(id),

@@ -95,6 +95,18 @@ const attachTo = (app, data) => {
             .then(() => {
                 return res.redirect('/posts');
             })
+    })
+    .post('/comment', (req, res) => {
+        const comment = req.body;
+        let date = data.posts.getDate();
+        comment.user = req.user.username;
+        if(req.user.filename !== undefined){
+            comment.filename = req.user.filename;
+            comment.uuid = req.user.uuid;
+        }
+        comment.date = date;
+        console.log(req.query);
+        //return data.posts.
     });
 
     app.use('/posts', router);
