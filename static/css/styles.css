@@ -339,6 +339,19 @@
   border: 1px solid #e4e4e4;
   border-top: none; }
 
+.comment {
+  overflow: auto;
+  padding: 20px;
+  text-align: left;
+  margin-top: 35px;
+  border-bottom: 1px solid #e4e4e4; }
+  .comment img {
+    width: 70px; }
+
+.comment-date {
+  font-style: italic;
+  font-size: 12px; }
+
 body {
   color: #555555;
   font-family: Karla, Helvetica, Arial, sans-serif;

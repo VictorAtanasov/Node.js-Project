@@ -36,7 +36,11 @@ class BaseData {
         return this.collection.updateOne({
             _id: new ObjectID(id),
         }, {
-            $set: comment
+            $push: {
+                "comments": {
+                    comment
+                }
+            }
         }, {
             upsert: true
         })

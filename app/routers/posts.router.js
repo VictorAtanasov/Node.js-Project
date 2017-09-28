@@ -97,16 +97,20 @@ const attachTo = (app, data) => {
             })
     })
     .post('/comment', (req, res) => {
-        const comment = req.body;
+        let comment = req.body;
         let date = data.posts.getDate();
+        let postId = comment.id;
+        let commentsId = Math.floor(Math.random() * 10000) + 1000;
         comment.user = req.user.username;
         if(req.user.filename !== undefined){
             comment.filename = req.user.filename;
             comment.uuid = req.user.uuid;
         }
         comment.date = date;
-        console.log(req.query);
-        //return data.posts.
+        return data.posts.insertComment(postId, comment)
+            .then(() => {
+                return res.redirect('back');
+            })
     });
 
     app.use('/posts', router);

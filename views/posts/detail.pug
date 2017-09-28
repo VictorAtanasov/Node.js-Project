@@ -47,11 +47,35 @@ block body
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         span.circle
                             <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                div.comments
-                    form(action="/posts/comment", method="POST")
-                        input(type="text" name="title" required placeholder="Enter title")
-                        br
-                        input(type="text" name="text" required placeholder="Enter text")
-                        br
-                        button
-                            | Save
+
+                
+                div.comments-wrapper
+                    h3
+                        | Comments
+                    div.post-border
+
+                    if context.details[0].comments
+                        each comment in context.details[0].comments
+                            div.comment
+                                div.author-image
+                                    if comment.comment.filename
+                                        img(src="/static/uploads/" + comment.comment.uuid + "/file/" + comment.comment.filename, alt="")
+                                    else
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                h4
+                                    =comment.comment.user
+                                p.comment-date
+                                    =comment.comment.date
+                                p
+                                    =comment.comment.text
+                            
+
+                
+                form(action="/posts/comment", method="POST")
+                    input(type="text" name="text" required placeholder="Enter text")
+                    br
+                    input(type="hidden" name="id" value=context.details[0]._id)
+                    br
+                    button
+                        | Save
+
