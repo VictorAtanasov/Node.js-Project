@@ -50,7 +50,7 @@ block body
 
                 
                 div.comments-wrapper
-                    h3
+                    h3.margin40
                         | Comments
                     div.post-border
 
@@ -68,14 +68,17 @@ block body
                                     =comment.comment.date
                                 p
                                     =comment.comment.text
-                            
 
-                
-                form(action="/posts/comment", method="POST")
-                    input(type="text" name="text" required placeholder="Enter text")
-                    br
-                    input(type="hidden" name="id" value=context.details[0]._id)
-                    br
-                    button
-                        | Save
-
+                h3.margin40
+                    | Add Comment
+                div.post-border           
+                div.comment-form-wraper
+                    div.form
+                        if user
+                            form(action="/posts/comment", method="POST")
+                                div.input-wrapper
+                                    textarea(type="text" name="text" required placeholder="Enter text")
+                                input(type="hidden" name="id" value=context.details[0]._id)
+                                button.btn
+                                    | Save
+                        else

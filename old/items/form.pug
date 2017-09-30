@@ -1,8 +1,0 @@
-extends ../_shared/_master
-block body
-    //- != messages()
-
-    form(action="/items", method="POST")
-        input(type="text" name="text" required placeholder="Enter text")
-        button
-            | Save
