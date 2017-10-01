@@ -1,6 +1,5 @@
 extends ../_shared/_master
 block body
-    //each post in context
     div.body-wraper
         div.logo-wraper
             img(src="../static/css/images/logo.png", alt="")
@@ -82,3 +81,12 @@ block body
                                 button.btn
                                     | Save
                         else
+                            p
+                                | Register or log in to add comments
+                            a(href="/auth/sign-up")
+                                div.btn.margin-right-20
+                                    | Register
+                            
+                            a(href="/auth/sign-in")
+                                div.btn
+                                    | LogIn

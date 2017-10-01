@@ -13,6 +13,23 @@
     font-size: 10px;
     letter-spacing: 3px; }
 
+.paralax, .form-paralax {
+  height: 500px;
+  overflow: hidden;
+  background-image: url(./images/2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.articles, .form-add-wraper {
+  margin: 0 auto;
+  margin-top: -100px;
+  width: 75%;
+  background: #ffffff;
+  height: auto;
+  overflow: auto; }
+
 .navigation {
   width: 100%;
   text-align: center;
@@ -80,23 +97,6 @@
   justify-content: center; }
   .logo-wraper img {
     margin-top: 15px; }
-
-.paralax {
-  height: 500px;
-  overflow: hidden;
-  background-image: url(./images/2.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-.articles {
-  margin: 0 auto;
-  margin-top: -100px;
-  width: 75%;
-  background: #ffffff;
-  height: auto;
-  overflow: auto; }
 
 .left {
   text-align: center;
@@ -375,6 +375,29 @@
 
 .margin40 {
   margin-top: 40px; }
+
+.margin-right-20 {
+  margin-right: 20px; }
+
+.form-paralax {
+  height: 300px;
+  background-image: url(./images/trousers.jpg); }
+
+.form-add-wraper {
+  text-align: center; }
+
+.post-form-wraper {
+  padding: 40px;
+  margin-top: 40px; }
+  .post-form-wraper input, .post-form-wraper textarea {
+    border: 1px solid #e4e4e4; }
+  .post-form-wraper .form {
+    width: auto; }
+  .post-form-wraper .btn {
+    color: #000000;
+    background: #f2f2f2; }
+    .post-form-wraper .btn:hover {
+      background: #e4e4e4; }
 
 body {
   color: #555555;

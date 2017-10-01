@@ -5,17 +5,36 @@ block head
     script(src="/static/js/posts.js")
     
 block body
-    if user
-        form(action="/posts", method="POST", enctype="multipart/form-data" )
-            input(type="text" name="title" required placeholder="Enter title")
-            br
-            input(type="text" name="text" required placeholder="Enter text")
-            br
-            input#autocomplete(type="text" name="category" required placeholder="Enter category")
-            br
-            input(type="file" name="file" required)
-            button
-                | Save
-    else
-        p
-            | Only registered users can add new posts
+    div.body-wraper
+        div.logo-wraper
+            img(src="../static/css/images/logo.png", alt="")
+        div.form-paralax
+        div.form-add-wraper
+            h2
+                | Add a Post
+            div.post-border
+            div.post-form-wraper
+                div.form
+                    if user
+                        form(action="/posts", method="POST", enctype="multipart/form-data" )
+                            div.input-wrapper
+                                input(type="text" name="title" required placeholder="Enter title")
+                            div.input-wrapper
+                                textarea(type="text" name="text" required placeholder="Enter text")
+                            div.input-wrapper
+                                input#autocomplete(type="text" name="category" required placeholder="Enter category")
+                            div.input-wrapper
+                                label.btn.btn-file
+                                    | Choose Image
+                                    input(type="file" name="file" required hidden).hide
+                            button.btn
+                                | Save
+                    else
+                        p
+                            | Only registered users can add new posts
+                        a(href="/auth/sign-up")
+                                div.btn.margin-right-20
+                                    | Register 
+                        a(href="/auth/sign-in")
+                            div.btn
+                                | LogIn

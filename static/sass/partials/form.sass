@@ -1,0 +1,22 @@
+.form-paralax
+    @extend %paralax
+    height: 300px
+    background: 
+        image: url(./images/trousers.jpg)
+
+.form-add-wraper
+    @extend %central-wraper
+    text-align: center
+
+.post-form-wraper
+    padding: 40px
+    margin-top: 40px
+    input, textarea
+        border: 1px solid $border-color
+    .form
+        width: auto
+    .btn
+        color: $black
+        background: $body-background
+        &:hover
+            background: $border-color
