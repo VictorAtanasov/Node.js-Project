@@ -1,7 +1,37 @@
 extends ../_shared/_master
 block body
-    ul
-        each category in context
-            li
-                a(href="categories/" + category.name)
-                    =category.name
+    div.body-wraper
+        div.logo-wraper
+            img(src="../static/css/images/logo.png", alt="")
+        div.categories-paralax
+        div.categories-wraper
+            div.left
+                h2
+                    | Categories
+                div.post-border
+                each category in context
+                    h3
+                        a(href="categories/" + category.name)
+                            =category.name
+            div.right
+                div.aside-wraper
+                    div.border-dotted
+                    h4
+                        | BECAUSE EVERY DAY SHOULD BE AN ADVENTURE…
+                    div.border-dotted
+                    div.author-info
+                        img(src="/static/css/images/angie.jpg", alt="")
+                        p
+                            | Hi, I'm Angie. Five years ago, I turned my passion into my day job. I am a brand ambassador for leading outdoor adventure shops. That means my office is the woods, the surf, the summit. I put gear through the ringer and document it for my clients. Here, I'll give you a more personal take on my assignments, my favorite tools, and how to turn your dreams into reality.
+                    
+                    div.border-dotted
+                    h4
+                        | My Social World
+                    div.border-dotted
+                    div.social
+                            span.circle
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            span.circle
+                                <i class="fa fa-twitter" aria-hidden="true"></i>

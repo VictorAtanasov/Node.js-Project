@@ -15,21 +15,17 @@
 
 .left
     text-align: center
-    width: 70%
+    width: 75%
     float: left
     padding: 0 80px
     .btn
         @extend %btn
 
-
-.right
-    width: 25%
-    float: right
-    text-align: center
-
 .article
     border-bottom: 1px solid $border-color
     padding: 30px 0 0 0
+    max-width: 833px
+    margin: 0 auto
     h2
         font-size: 28px
     img
@@ -86,3 +82,34 @@
             color: $white
     i
         font-size: 17px
+
+.right
+    width: 25%
+    float: right
+    text-align: center
+    padding: 35px 20px 0 0
+    img
+        max-height: 300px
+        max-width: 260px
+        margin-top: 20px
+
+.aside-wraper
+    max-width: 260px
+    .social
+        justify-content: center
+    .circle
+        background: $border-color
+        &:hover
+            background: $primary-color
+
+.border-dotted
+    border-top: 1px dotted $border-color
+    width: 150px
+    margin: 0 auto
+
+.author-info
+    margin: 0 auto
+    p
+        text-align: left
+        margin-top: 20px
+        margin-bottom: 60px
