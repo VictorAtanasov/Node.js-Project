@@ -33,7 +33,8 @@ const attachTo = (app, data) => {
             .then((catPost) => {
                 catPost.forEach((posts) => {
                     return res.render('posts/category', {
-                        context: posts.posts
+                        context: posts.posts,
+                        category: posts.name
                     })
                 })
             })
