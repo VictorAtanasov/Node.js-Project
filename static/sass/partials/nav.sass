@@ -1,12 +1,17 @@
+.mobile-menu
+    display: none
+
+.desktop-menu
+    display: flex
+    align-items: center
+    justify-content: center
+
 .navigation
     width: 100%
     text-align: center
     position: fixed
     background: #ffffff
     font-family: $nav-font-stack
-    display: flex
-    align-items: center
-    justify-content: center
     z-index: 999
     border-bottom: 1px solid $border-color
     ul
@@ -29,6 +34,8 @@
         margin-top: 0
         background: none
         color: $black
+        &:last-of-type
+            margin-left: 10px
 
 .logo-top
     width: 40px
