@@ -24,6 +24,14 @@
         color: $primary-color
         &:hover
             color: $black
+    .btn
+        @extend %btn
+        margin-top: 0
+        background: none
+        color: $black
+
+.logo-top
+    width: 40px
 
 .avatar
     border: 1px solid #000000
@@ -46,11 +54,14 @@
     font-size: 20px
 
 .user-drop-down
-    display: inline-block
-    padding: 0
     position: absolute
+    margin-top: 16px
+    padding: 10px 40px 10px 0
+    background: $white
     li
         display: block
+        margin-right: 0
+
 
 .hide
     display: none
