@@ -1,4 +1,8 @@
-var dropDown = $('.user-drop-down');
+var dropDown = $('.user-drop-down'),
+    openBtn = $('.fa-bars'),
+    closeBtn = $('.fa-times'),
+    mobileMenu = $('.sidenav');
+
 $('.user-name').on('click', function(){
     if (dropDown.hasClass('hide')){
         dropDown.removeClass('hide');
@@ -13,4 +17,14 @@ $('.body-wraper').on('click', function(){
         dropDown.addClass('hide');
         dropDown.hide()
     }
-})
+});
+
+openBtn.on('click', function(){
+    mobileMenu.css('width', '200px');
+    openBtn.hide();
+});
+
+closeBtn.on('click', function(){
+    mobileMenu.css('width', '0');
+    openBtn.show('slow')
+});

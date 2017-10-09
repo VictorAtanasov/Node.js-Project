@@ -1,39 +1,13 @@
+include _nav-links
+
 mixin nav()
     div.navigation
         div.desktop-menu
-            a(href="/")
-                img(src="/static/css/images/logo-sm.png", alt="logo-sm").logo-top
-            ul
-                li
-                    a(href="/")
-                        | Home
-                li
-                    a(href="/posts/form")
-                        | Add post
-                li
-                    a(href="/posts/categories")
-                        | Categories
-            if user  
-                if user.uuid
-                    span.avatar
-                        img(src="/static/uploads/" + user.uuid + "/file/" + user.filename, alt="")
-                else
-                    span.avatar
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                span.user-name
-                    =user.username
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                    div.user-drop-down.hide
-                        ul
-                            li
-                                form(action="/auth/sign-out" method="post")
-                                    button.btn
-                                        | sign-out
-                
-            else
-                button.btn
-                    a(href="/auth/sign-in") Sign In
-                button.btn
-                    a(href="/auth/sign-up") Sign Up
-        div.mobile-menu
-            <i class="fa fa-bars" aria-hidden="true"></i>
+            +nav-links()
+            
+    div.mobile-menu
+        img(src="/static/css/images/logo-sm.png", alt="logo-sm").logo-top
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        div.sidenav
+            <i class="fa fa-times closebtn" aria-hidden="true"></i>
+            +nav-links()

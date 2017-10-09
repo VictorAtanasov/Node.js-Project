@@ -1,5 +1,11 @@
 .mobile-menu
     display: none
+    position: fixed
+    width: 100%
+    background: rgba(255, 255, 255, 0.5)
+    .logo-top
+        width: 26px
+        margin: 5px 10px
 
 .desktop-menu
     display: flex
@@ -76,3 +82,48 @@
 .user-name
     cursor: pointer
         
+.sidenav
+    height: 100%
+    width: 0
+    position: fixed
+    z-index: 1
+    top: 0
+    right: 0
+    background-color: $black
+    overflow-x: hidden
+    transition: 0.5s
+    padding-top: 60px
+    opacity: 0.9
+    li
+        margin-bottom: 15px
+        list-style-type: none
+    a
+        color: $white
+        text-decoration: none
+        transition: 0.3s
+        font-size: 20px
+        &:hover
+            color: #feae00 !important
+    .logo-top
+        display: none
+    .avatar
+        width: 30px
+        height: 30px
+        display: block
+        margin: 0 auto
+        img
+            width: 30px
+            height: 30px
+
+.closebtn
+    color: #ffffff
+    position: absolute
+    top: 10px
+    right:  25px
+    font-size: 26px !important
+   
+
+.fa-bars
+    float: right
+    font-size: 22px !important
+    margin: 5px 10px
