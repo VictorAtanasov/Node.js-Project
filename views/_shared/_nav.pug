@@ -6,7 +6,8 @@ mixin nav()
             +nav-links()
             
     div.mobile-menu
-        img(src="/static/css/images/logo-sm.png", alt="logo-sm").logo-top
+        a(href="/")
+            img(src="/static/css/images/logo-sm.png", alt="logo-sm").logo-top
         <i class="fa fa-bars" aria-hidden="true"></i>
         div.sidenav
             <i class="fa fa-times closebtn" aria-hidden="true"></i>
