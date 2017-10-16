@@ -509,7 +509,8 @@
   padding: 40px;
   margin-top: 40px; }
   .post-form-wraper input, .post-form-wraper textarea {
-    border: 1px solid #e4e4e4; }
+    border: 1px solid #e4e4e4;
+    color: #000000 !important; }
   .post-form-wraper .form {
     width: auto; }
   .post-form-wraper .btn {
