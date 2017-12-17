@@ -1,1 +1,11 @@
-# Node.js-Project
+# Node.js blog application by Victor Atanasov
+- Used Libraries
+  - Node.js framework - Express
+  - Template engine - Pug.js
+  - Database - MongoDb - Mlab
+  - Passport
+  - Gulp.js
+  - SASS
+  - bootstrap
+  - jQuery
+- Live Version URL - https://victor-nodejs-project-vvxllfwnok.now.sh/
